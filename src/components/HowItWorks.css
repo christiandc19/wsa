@@ -1,0 +1,258 @@
+.how-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 100px 24px;
+  overflow: hidden;
+}
+
+.how-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.how-header {
+  max-width: 760px;
+  margin-bottom: 70px;
+}
+
+.how-kicker {
+  margin: 0 0 14px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.how-header h2 {
+  margin: 0;
+  color: #020617;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.how-header p {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.how-timeline {
+  position: relative;
+  display: grid;
+  gap: 82px;
+}
+
+.how-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #e2e8f0 10%,
+    #e2e8f0 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.how-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  z-index: 1;
+}
+
+.how-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  z-index: 2;
+}
+
+.how-step.reverse .how-image-wrap {
+  order: 2;
+}
+
+.how-step.reverse .how-copy {
+  order: 1;
+}
+
+.how-image-wrap {
+  position: relative;
+  border-radius: 34px;
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.14);
+}
+
+.how-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.how-step:hover .how-image-wrap img {
+  transform: scale(1.04);
+}
+
+.how-floating-badge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #ffffff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.22);
+}
+
+.how-floating-badge span {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.how-copy {
+  max-width: 520px;
+}
+
+.how-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.how-copy h3 {
+  margin: 0;
+  color: #020617;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.how-copy p {
+  margin: 20px 0 0;
+  color: #475569;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+
+@media (max-width: 980px) {
+  .how-line {
+    display: none;
+  }
+
+  .how-marker {
+    display: none;
+  }
+
+  .how-step {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 980px) {
+  .how-section {
+    padding: 82px 20px;
+  }
+
+  .how-header {
+    margin-bottom: 48px;
+  }
+
+  .how-step,
+  .how-step.reverse {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .how-step.reverse .how-image-wrap,
+  .how-step.reverse .how-copy {
+    order: initial;
+  }
+
+  .how-image-wrap,
+  .how-image-wrap img {
+    min-height: 390px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .how-section {
+    padding: 66px 18px;
+  }
+
+  .how-header {
+    margin-bottom: 38px;
+  }
+
+  .how-header p,
+  .how-copy p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .how-timeline {
+    gap: 52px;
+  }
+
+  .how-image-wrap {
+    border-radius: 24px;
+  }
+
+  .how-image-wrap,
+  .how-image-wrap img {
+    min-height: 320px;
+  }
+
+  .how-floating-badge {
+    left: 16px;
+    bottom: 16px;
+    padding: 11px 14px;
+  }
+
+  .how-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    margin-bottom: 18px;
+  }
+}

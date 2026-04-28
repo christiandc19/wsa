@@ -1,64 +1,83 @@
+import { MessageCircle, ClipboardList, UserCheck } from "lucide-react";
+import "./HowItWorks.css";
+
+import engageImage from "../assets/how-engage.webp";
+import guideImage from "../assets/how-guide.webp";
+import convertImage from "../assets/how-convert.webp";
+
 const steps = [
   {
-    step: "Step 1",
-    title: "Add WebSmartAssistant to your website",
-    description:
-      "Integrate the platform into your website with a simple setup process designed for modern sites.",
+    number: "01",
+    label: "Engage",
+    title: "Start the Conversation",
+    text: "Welcome visitors with helpful guidance the moment they arrive. Instead of leaving them to search alone, WebSmartAssistant creates an easy first step.",
+    image: engageImage,
+    icon: MessageCircle,
   },
   {
-    step: "Step 2",
-    title: "Customize the experience",
-    description:
-      "Align the assistant with your business goals, website content, services, and visitor flow.",
+    number: "02",
+    label: "Guide",
+    title: "Help Prospects Find Clarity",
+    text: "Use chat, surveys, and decision-support tools to help families understand options, ask better questions, and feel more confident moving forward.",
+    image: guideImage,
+    icon: ClipboardList,
   },
   {
-    step: "Step 3",
-    title: "Engage visitors automatically",
-    description:
-      "Let AI-powered tools answer questions, guide users, and create better digital interactions.",
-  },
-  {
-    step: "Step 4",
-    title: "Capture leads and insights",
-    description:
-      "Collect contact information, discover visitor intent, and learn from real website engagement.",
+    number: "03",
+    label: "Convert",
+    title: "Turn Interest Into Action",
+    text: "Capture qualified leads when visitors are engaged and ready, giving your team better context before the first follow-up.",
+    image: convertImage,
+    icon: UserCheck,
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-            How It Works
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            A simple path to smarter website engagement
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            WebSmartAssistant is designed to fit into your website strategy
-            without unnecessary complexity. Start with a focused use case today,
-            then expand your setup over time.
+    <section className="how-section" id="how-it-works">
+      <div className="how-container">
+        <div className="how-header">
+          <p className="how-kicker">How It Works</p>
+          <h2>Guide Prospects From First Visit to Next Step</h2>
+          <p>
+            WebSmartAssistant helps senior living websites feel more personal,
+            helpful, and action-oriented — without overwhelming families.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {steps.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6"
-            >
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                {item.step}
-              </p>
-              <h3 className="mt-3 text-xl font-semibold text-slate-900">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-slate-600">{item.description}</p>
-            </div>
-          ))}
+<div className="how-timeline">
+  <div className="how-line"></div>
+
+  {steps.map((step, index) => {
+    const Icon = step.icon;
+
+    return (
+      <article
+        className={`how-step ${index % 2 === 1 ? "reverse" : ""}`}
+        key={step.title}
+      >
+        {/* NEW: timeline marker */}
+        <div className="how-marker">
+          <Icon size={16} />
         </div>
+
+        <div className="how-image-wrap">
+          <img src={step.image} alt={step.title} />
+
+          <div className="how-floating-badge">
+            <span>{step.label}</span>
+          </div>
+        </div>
+
+        <div className="how-copy">
+          <span className="how-number">{step.number}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </div>
+      </article>
+    );
+  })}
+</div>
       </div>
     </section>
   );
