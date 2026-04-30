@@ -14,7 +14,7 @@ export default function Navbar() {
         </a>
 
         <nav className="navbar-menu">
-          <a href="#platform" className="navbar-link">
+          <a href="/solutions" className="navbar-link">
             Overview
           </a>
 
@@ -24,23 +24,38 @@ export default function Navbar() {
               <span>▾</span>
             </button>
 
-            <div className="navbar-dropdown-menu">
+          <div className="navbar-dropdown-menu">
 
-              <a href="#surveys" className="navbar-dropdown-item">
-                <strong>Overview</strong>
-                <span>Guided assessments that capture leads</span>
-              </a>
+            <a href="/solutions/chat" className="navbar-dropdown-item">
+              <strong>Chat</strong>
+              <span>AI conversations for website visitors</span>
+            </a>
 
-              <a href="#chat" className="navbar-dropdown-item">
-                <strong>Chat</strong>
-                <span>AI conversations for website visitors</span>
-              </a>
+            <a href="/solutions/surveys" className="navbar-dropdown-item">
+              <strong>Surveys</strong>
+              <span>Guided assessments that capture leads</span>
+            </a>
 
-              <a href="#surveys" className="navbar-dropdown-item">
-                <strong>Surveys</strong>
-                <span>Guided assessments that capture leads</span>
-              </a>
-            </div>
+            <a href="/solutions/webform" className="navbar-dropdown-item">
+              <strong>Webform</strong>
+              <span>Monitored website forms that capture leads</span>
+            </a>
+
+            <a href="/solutions/tour-scheduling" className="navbar-dropdown-item">
+              <strong>Tour Scheduling</strong>
+              <span>Help visitors request tours directly</span>
+            </a>
+
+            <a href="/solutions/pricing-assistant" className="navbar-dropdown-item">
+              <strong>Pricing Assistant</strong>
+              <span>Guide visitors through pricing questions</span>
+            </a>
+
+            <a href="/solutions/analytics" className="navbar-dropdown-item">
+              <strong>Analytics</strong>
+              <span>Track leads, activity, and engagement</span>
+            </a>
+          </div>
           </div>
 
           <a href="#how-it-works" className="navbar-link">
@@ -91,20 +106,29 @@ export default function Navbar() {
 
           {isSolutionsOpen && (
             <div className="navbar-mobile-submenu">
-              <a
-                href="#chat"
-                className="navbar-mobile-submenu-link"
-                onClick={() => setIsOpen(false)}
-              >
+
+              <a href="/solutions/chat" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
                 Chat
               </a>
 
-              <a
-                href="#surveys"
-                className="navbar-mobile-submenu-link"
-                onClick={() => setIsOpen(false)}
-              >
+              <a href="/solutions/surveys" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
                 Surveys
+              </a>
+
+              <a href="/solutions/webform" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
+                Webform
+              </a>
+
+              <a href="/solutions/tour-scheduling" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
+                Tour Scheduling
+              </a>
+
+              <a href="/solutions/pricing-assistant" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
+                Pricing Assistant
+              </a>
+
+              <a href="/solutions/analytics" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
+                Analytics
               </a>
             </div>
           )}
