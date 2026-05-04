@@ -1,0 +1,193 @@
+.smartchat-hero {
+  padding: 100px 20px;
+  background: #f9fafb;
+}
+
+.smartchat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.smartchat-content {
+  max-width: 520px;
+}
+
+.smartchat-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #38BDF8;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+
+.smartchat-subtext {
+  font-size: 18px;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.smartchat-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.smartchat-btn-primary {
+  background: #0f172a;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.smartchat-btn-primary:hover {
+  background: #1e293b;
+}
+
+.smartchat-btn-secondary {
+  border: 1px solid #cbd5e1;
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e293b;
+  transition: 0.3s;
+}
+
+.smartchat-btn-secondary:hover {
+  background: #f1f5f9;
+}
+
+/* IMAGE SIDE */
+.smartchat-image-wrapper {
+  position: relative;
+}
+
+.smartchat-image {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* FLOATING CARD */
+.smartchat-card {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 280px;
+}
+
+.smartchat-card-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Accent */
+
+.smartchat-hero {
+  position: relative;
+  overflow: hidden;
+  background: #f8fafc;
+  padding: 90px 24px 110px;
+}
+
+/* 🔥 ACCENTS */
+
+.smartchat-accent {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Soft orb behind left content */
+.smartchat-accent-orb {
+  width: 280px;
+  height: 280px;
+  left: -90px;
+  bottom: 80px;
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 50%;
+}
+
+/* Rounded pill behind image */
+.smartchat-accent-pill {
+  width: 360px;
+  height: 150px;
+  right: -80px;
+  top: 90px;
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 999px;
+  transform: rotate(-18deg);
+}
+
+/* Small dotted pattern */
+.smartchat-accent-dots {
+  width: 130px;
+  height: 130px;
+  right: 42%;
+  bottom: 60px;
+  background-image: radial-gradient(
+    rgba(15, 23, 42, 0.18) 2px,
+    transparent 2px
+  );
+  background-size: 18px 18px;
+  opacity: 0.35;
+}
+
+
+.smartchat-title h1 {
+  font-size: clamp(42px, 5.5vw, 64px);
+  color: #293961;
+  display: inline-block;
+  margin-bottom: 6px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+/* Top label (product name) */
+.smartchat-title h2 {
+  font-size: 35px;
+  color: #3e4550;
+  margin-bottom: 6px;
+  line-height: 35px;
+}
+
+/* Main headline */
+.smartchat-heading {
+  font-size: clamp(42px, 5.5vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #1e293b;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .smartchat-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .smartchat-title {
+    font-size: 36px;
+  }
+}
+
+

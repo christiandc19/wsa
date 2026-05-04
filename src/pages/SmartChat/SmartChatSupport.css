@@ -1,0 +1,144 @@
+.smartchat-support-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f6fbff 100%);
+  padding: 110px 24px;
+  position: relative;
+}
+
+.smartchat-support-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 76px;
+  align-items: center;
+}
+
+/* IMAGE */
+.smartchat-support-media {
+  position: relative;
+}
+
+.smartchat-support-media img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 34px;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.14);
+}
+
+/* FLOATING PANEL */
+.smartchat-mini-panel {
+  position: absolute;
+  right: 28px;
+  bottom: -28px;
+  width: 260px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.22);
+}
+
+.smartchat-mini-panel span {
+  display: block;
+  color: #bfdbfe;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.smartchat-mini-panel strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+/* CONTENT */
+.smartchat-support-kicker {
+  display: block;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.smartchat-support-content h2 {
+  margin: 0 0 22px;
+  color: #1e3a5f;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.smartchat-support-content p {
+  margin: 0 0 32px;
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 620px;
+}
+
+/* LIST */
+.smartchat-support-list {
+  max-width: 620px;
+  display: grid;
+  gap: 14px;
+}
+
+.smartchat-support-list div {
+  padding: 20px 22px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.05);
+}
+
+.smartchat-support-list strong {
+  display: block;
+  color: #0f172a;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.smartchat-support-list span {
+  display: block;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .smartchat-support-container {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .smartchat-support-media img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .smartchat-support-section {
+    padding: 76px 18px;
+  }
+
+  .smartchat-support-media img {
+    height: 340px;
+    border-radius: 26px;
+  }
+
+  .smartchat-mini-panel {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: -46px 16px 0;
+    width: auto;
+  }
+}

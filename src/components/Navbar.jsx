@@ -26,8 +26,8 @@ export default function Navbar() {
 
           <div className="navbar-dropdown-menu">
 
-            <a href="/solutions/chat" className="navbar-dropdown-item">
-              <strong>Chat</strong>
+            <a href="/solutions/smart-chat" className="navbar-dropdown-item">
+              <strong>Smart Chat</strong>
               <span>AI conversations for website visitors</span>
             </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
           </div>
           </div>
 
-          <a href="#how-it-works" className="navbar-link">
+          <a href="/how-it-works" className="navbar-link">
             How It Works
           </a>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
             <div className="navbar-mobile-submenu">
 
               <a href="/solutions/chat" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
-                Chat
+                Smart Chat
               </a>
 
               <a href="/solutions/surveys" className="navbar-mobile-submenu-link" onClick={() => setIsOpen(false)}>
