@@ -1,43 +1,118 @@
-/* Page layout */
-.how-simple-page {
-  padding: 80px 20px;
-  background: #f8fafc;
-  min-height: 100vh;
+/* HERO WITH IMAGE BACKGROUND */
+.how-hero {
+  position: relative;
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 8%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+  overflow: hidden;
 }
 
-/* Hero section */
-.how-simple-hero {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  text-align: center;
+/* DARK OVERLAY (IMPORTANT FOR READABILITY) */
+.how-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(2, 6, 23, 0.85),
+    rgba(2, 6, 23, 0.6),
+    rgba(2, 6, 23, 0.3)
+  );
+
+  z-index: 1;
 }
 
-.how-kicker {
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: #64748b;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+/* CONTENT */
+.how-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
 }
 
-.how-simple-hero h1 {
-  font-size: 42px;
+
+.how-hero h1 {
+  font-size: clamp(38px, 4vw, 100px);
   font-weight: 600;
-  color: #0f172a;
-  margin-bottom: 16px;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.how-simple-hero p {
+.how-description {
   font-size: 18px;
-  color: #475569;
+  color: #e2e8f0;
   line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.how-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.how-primary-btn {
+  background: #05a4ee;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.how-primary-btn:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.how-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.how-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .how-hero {
+    padding: 80px 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .how-hero-content {
+    margin: 0 auto;
+  }
+
+  .how-hero-actions {
+    justify-content: center;
+  }
 }
 
 /* Widget section */
 .how-widget-section {
   max-width: 1100px;
-  margin: 0 auto;
-}
+  margin: 2rem auto;
+  border-radius: 1rem;
+border: 1px solid rgba(255, 255, 255, 0.06);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
 
 /* Make widget look centered and clean */
 #senior-living-survey-widget {

@@ -55,7 +55,7 @@ function ChatbotController() {
     let clientKey = "web-smart-assistant"; // 👈 default chatbot (used everywhere unless overridden)
 
     if (path === "/how-it-works") {
-      clientKey = "robin-run"; // 👈 only for How It Works page
+      clientKey = "evergreen-heights"; // 👈 FIX
     }
 
     // Example future use:
