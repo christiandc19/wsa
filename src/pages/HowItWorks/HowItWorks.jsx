@@ -2,68 +2,67 @@ import { useEffect } from "react";
 import "./HowItWorks.css";
 import heroImage from "../../assets/how-it-works-hero.webp";
 
-// IMPORTANT:
-// Do NOT import WebformWidget here if you want to test it as a real widget.
-// The widget will be mounted using window.WebSmartAssistantForm(...)
-
 export default function HowItWorks() {
-useEffect(() => {
-  // Mount the survey widget
-  if (window.WebSmartAssistant) {
-    window.WebSmartAssistant({
-      type: "survey",
-      clientKey: "evergreen-heights",
-      surveyKey: "memory-support",
-      target: "#memory-support-survey-widget",
-    });
-  }
+  useEffect(() => {
+    // Mount the survey widget if the main WSA widget script is already loaded.
+    if (window.WebSmartAssistant) {
+      window.WebSmartAssistant({
+        type: "survey",
+        clientKey: "evergreen-heights",
+        surveyKey: "memory-support",
+        target: "#memory-support-survey-widget",
+      });
+    }
 
-  // Load webform CSS
-  const cssId = "wsa-webform-css";
-  if (!document.getElementById(cssId)) {
-    const css = document.createElement("link");
-    css.id = cssId;
-    css.rel = "stylesheet";
-    css.href =
-      "https://cdn.websmartassistant.com/webform/v1.1/wsa-webform-widget.css";
-    document.head.appendChild(css);
-  }
+    // Load webform CSS once.
+    const cssId = "wsa-webform-css";
 
-  // Mount webform after script loads
-  const mountWebform = () => {
-    if (!window.WebSmartAssistantForm) {
-      console.error("WebSmartAssistantForm is not available.");
+    if (!document.getElementById(cssId)) {
+      const css = document.createElement("link");
+      css.id = cssId;
+      css.rel = "stylesheet";
+      css.href =
+        "https://cdn.websmartassistant.com/webform/v1.1/wsa-webform-widget.css";
+
+      document.head.appendChild(css);
+    }
+
+    // Mount webform after the webform widget script is ready.
+    const mountWebform = () => {
+      if (!window.WebSmartAssistantForm) {
+        console.error("WebSmartAssistantForm is not available.");
+        return;
+      }
+
+      window.WebSmartAssistantForm({
+        target: "#evergreen-webform-widget",
+        clientKey: "evergreen-heights",
+        formKey: "senior-living-contact",
+        apiUrl:
+          "https://su3cjmqk2h.ap-southeast-2.awsapprunner.com/api/Leads",
+        apiKey: "dev-webform-key-12345",
+        source: "webform",
+      });
+    };
+
+    const scriptId = "wsa-webform-script";
+
+    if (document.getElementById(scriptId)) {
+      mountWebform();
       return;
     }
 
-    window.WebSmartAssistantForm({
-      target: "#evergreen-webform-widget",
-      clientKey: "evergreen-heights",
-      formKey: "senior-living-contact",
-      apiUrl: "http://localhost:5297/api/Leads",
-      apiKey: "dev-webform-key-123",
-      source: "webform",
-    });
-  };
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://cdn.websmartassistant.com/webform/v1.1/widget.js";
+    script.async = true;
+    script.onload = mountWebform;
+    script.onerror = () => {
+      console.error("Failed to load WebSmartAssistant webform widget script.");
+    };
 
-  const scriptId = "wsa-webform-script";
-
-  if (document.getElementById(scriptId)) {
-    mountWebform();
-    return;
-  }
-
-  const script = document.createElement("script");
-  script.id = scriptId;
-  script.src = "https://cdn.websmartassistant.com/webform/v1.1/widget.js";
-  script.async = true;
-  script.onload = mountWebform;
-  script.onerror = () => {
-    console.error("Failed to load WebSmartAssistant webform widget script.");
-  };
-
-  document.body.appendChild(script);
-}, []);
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <main className="how-simple-page">
