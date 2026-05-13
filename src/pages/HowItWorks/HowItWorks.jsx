@@ -98,56 +98,75 @@ export default function HowItWorks() {
       document.body.appendChild(script);
     }
 
-    /* ========================================
-       WEBFORM WIDGET
-    ======================================== */
+/* ========================================
+   WEBFORM WIDGET
+   New CDN structure:
+   /widgets/webform/v1/
+======================================== */
 
-    const webformCssId = "wsa-webform-css";
+const webformCssId = "wsa-webform-css";
 
-    if (!document.getElementById(webformCssId)) {
-      const css = document.createElement("link");
-      css.id = webformCssId;
-      css.rel = "stylesheet";
-      css.href =
-        "https://cdn.websmartassistant.com/webform/v1.1/wsa-webform-widget.css";
+if (!document.getElementById(webformCssId)) {
+  const css = document.createElement("link");
+  css.id = webformCssId;
+  css.rel = "stylesheet";
+  css.href =
+    "https://cdn.websmartassistant.com/widgets/webform/v1/webform-widget.css";
 
-      document.head.appendChild(css);
-    }
+  document.head.appendChild(css);
+}
 
-    const mountWebform = () => {
-      if (!window.WebSmartAssistantForm) {
-        console.error("WebSmartAssistantForm is not available.");
-        return;
-      }
+const mountWebform = () => {
+  if (!window.WebSmartAssistantForm) {
+    console.error("WebSmartAssistantForm is not available.");
+    return;
+  }
 
-      window.WebSmartAssistantForm({
-        target: "#evergreen-webform-widget",
-        clientKey: "evergreen-heights",
-        formKey: "senior-living-contact",
-        apiUrl:
-          "https://su3cjmqk2h.ap-southeast-2.awsapprunner.com/api/Leads",
-        apiKey: "dev-webform-key-12345",
-        source: "webform",
-      });
-    };
+  /*
+    New secure white-label setup.
 
-    const webformScriptId = "wsa-webform-script";
+    Do NOT pass:
+    - apiUrl
+    - apiKey
 
-    if (document.getElementById(webformScriptId)) {
-      mountWebform();
-    } else {
-      const script = document.createElement("script");
-      script.id = webformScriptId;
-      script.src =
-        "https://cdn.websmartassistant.com/webform/v1.1/widget.js";
-      script.async = true;
-      script.onload = mountWebform;
-      script.onerror = () => {
-        console.error("Failed to load webform widget.");
-      };
+    The widget now uses clientKey + formKey and submits to
+    the public backend endpoint internally.
+  */
+  window.WebSmartAssistantForm({
+    target: "#evergreen-webform-widget",
+    clientKey: "evergreen-heights",
+    formKey: "senior-living-contact",
+    source: "webform",
+  });
+};
 
-      document.body.appendChild(script);
-    }
+const webformScriptId = "wsa-webform-script";
+
+if (document.getElementById(webformScriptId)) {
+  mountWebform();
+} else {
+  const script = document.createElement("script");
+  script.id = webformScriptId;
+  script.src =
+    "https://cdn.websmartassistant.com/widgets/webform/v1/webform-widget.js";
+  script.async = true;
+  script.onload = mountWebform;
+  script.onerror = () => {
+    console.error("Failed to load webform widget.");
+  };
+
+  document.body.appendChild(script);
+}
+
+
+
+
+
+
+
+
+
+
   }, []);
 
   return (
