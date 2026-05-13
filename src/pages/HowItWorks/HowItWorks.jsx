@@ -15,7 +15,7 @@ export default function HowItWorks() {
       css.id = chatbotCssId;
       css.rel = "stylesheet";
       css.href =
-        "https://cdn.websmartassistant.com/widget/v1.9.2/chatbot-widget.css";
+      "https://cdn.websmartassistant.com/widgets/chatbot/v1/chatbot-widget.css";
 
       document.head.appendChild(css);
     }
@@ -39,7 +39,7 @@ export default function HowItWorks() {
       const script = document.createElement("script");
       script.id = chatbotScriptId;
       script.src =
-        "https://cdn.websmartassistant.com/widget/v1.9.2/chatbot-widget.js";
+      "https://cdn.websmartassistant.com/widgets/chatbot/v1/chatbot-widget.js";
       script.async = true;
       script.onload = mountChatbot;
       script.onerror = () => {
@@ -157,14 +157,6 @@ if (document.getElementById(webformScriptId)) {
 
   document.body.appendChild(script);
 }
-
-
-
-
-
-
-
-
 
 
   }, []);
